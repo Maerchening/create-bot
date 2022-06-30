@@ -15,5 +15,30 @@ discord_state = "기다리는중~"
 Twitch_ID = "옥쓔"
 ment = "시간 나면 한번 들러줘"
 
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print(client.userid)
+    print("ready")
+    
+    game = discord.Game(discord_state)
+    await client.change_presence(discord.Status.online, activity=game)
+    
+    channel = client.get_all_channel(discord_ID)
+    
+    oauth_key = requests.post("https://id.twitch.tv/oauth2/token?client_id=" + client_id + "&client_secret=" + client_secret + "&arant_type=client_credentials")
+    access_token = loads(oauth_key.text)["access_token"]
+    token_type = 'Bearer'
+    autorization = token_type + access_token
+    print(autorization)
+    
+    check = False
+    
+    while True:
+        print("ready on Notification")
+        
+        
+
 
 print("good")
