@@ -1,0 +1,13 @@
+pip install discord
+	- discord 사용하기
+
+client_id
+client_secret
+	- twitch 개발자모드에서 확인
+
+discord_Token
+discord_ID
+	- discord를 개발자 모드로 바꾸고 확인 가능
+
+discord_state
+	- discord 상태를 출력
